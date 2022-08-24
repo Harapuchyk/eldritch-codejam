@@ -8,6 +8,16 @@ const cthulthu = document.querySelector('.cthulthu');
 const iogSothoth = document.querySelector('.iog-sothoth');
 const shubNiggurath = document.querySelector('.shub-niggurath');
 const normalDifficultButton = document.querySelector('.normal-difficult');
+const firstStageGreenPanel = document.querySelector('.first-stage-green-panel');
+const secondStageGreenPanel = document.querySelector('.second-stage-green-panel');
+const thirdStageGreenPanel = document.querySelector('.third-stage-green-panel');
+const firstStageBrownPanel = document.querySelector('.first-stage-brown-panel');
+const secondStageBrownPanel = document.querySelector('.second-stage-brown-panel');
+const thirdStageBrownPanel = document.querySelector('.third-stage-brown-panel');
+const firstStageBluePanel = document.querySelector('.first-stage-blue-panel');
+const secondStageBluePanel = document.querySelector('.second-stage-blue-panel');
+const thirdStageBluePanel = document.querySelector('.third-stage-blue-panel');
+
 
 let arrFirstStage = [];
 let arrSecondStage = [];
@@ -205,7 +215,6 @@ const cardsDataGreen = [
       color:'green'
     },
   ]
-
 
   const cardsDataBrown = [
     {
@@ -436,6 +445,15 @@ normalDifficultButton.addEventListener('click', () => {
 });
 
 azathoth.addEventListener('click', () => {
+  firstStageGreenPanel.innerHTML = ancientsData[0].firstStage.greenCards;
+  firstStageBrownPanel.innerHTML = ancientsData[0].firstStage.brownCards;
+  firstStageBluePanel.innerHTML = ancientsData[0].firstStage.blueCards;
+  secondStageGreenPanel.innerHTML = ancientsData[0].secondStage.greenCards;
+  secondStageBrownPanel.innerHTML = ancientsData[0].secondStage.brownCards;
+  secondStageBluePanel.innerHTML = ancientsData[0].secondStage.blueCards;
+  thirdStageGreenPanel.innerHTML = ancientsData[0].thirdStage.greenCards;
+  thirdStageBrownPanel.innerHTML = ancientsData[0].thirdStage.brownCards;
+  thirdStageBluePanel.innerHTML = ancientsData[0].thirdStage.blueCards;
   cthulthu.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
@@ -443,6 +461,15 @@ azathoth.addEventListener('click', () => {
 });
 
 cthulthu.addEventListener('click', () => {
+  firstStageGreenPanel.innerHTML = ancientsData[1].firstStage.greenCards;
+  firstStageBrownPanel.innerHTML = ancientsData[1].firstStage.brownCards;
+  firstStageBluePanel.innerHTML = ancientsData[1].firstStage.blueCards;
+  secondStageGreenPanel.innerHTML = ancientsData[1].secondStage.greenCards;
+  secondStageBrownPanel.innerHTML = ancientsData[1].secondStage.brownCards;
+  secondStageBluePanel.innerHTML = ancientsData[1].secondStage.blueCards;
+  thirdStageGreenPanel.innerHTML = ancientsData[1].thirdStage.greenCards;
+  thirdStageBrownPanel.innerHTML = ancientsData[1].thirdStage.brownCards;
+  thirdStageBluePanel.innerHTML = ancientsData[1].thirdStage.blueCards;
   azathoth.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
@@ -450,6 +477,15 @@ cthulthu.addEventListener('click', () => {
 });
 
  iogSothoth.addEventListener('click', () => {
+  firstStageGreenPanel.innerHTML = ancientsData[2].firstStage.greenCards;
+  firstStageBrownPanel.innerHTML = ancientsData[2].firstStage.brownCards;
+  firstStageBluePanel.innerHTML = ancientsData[2].firstStage.blueCards;
+  secondStageGreenPanel.innerHTML = ancientsData[2].secondStage.greenCards;
+  secondStageBrownPanel.innerHTML = ancientsData[2].secondStage.brownCards;
+  secondStageBluePanel.innerHTML = ancientsData[2].secondStage.blueCards;
+  thirdStageGreenPanel.innerHTML = ancientsData[2].thirdStage.greenCards;
+  thirdStageBrownPanel.innerHTML = ancientsData[2].thirdStage.brownCards;
+  thirdStageBluePanel.innerHTML = ancientsData[2].thirdStage.blueCards;
   azathoth.classList.toggle('hidden');
   cthulthu.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
@@ -457,6 +493,15 @@ cthulthu.addEventListener('click', () => {
  });
 
 shubNiggurath.addEventListener('click', () => {
+  firstStageGreenPanel.innerHTML = ancientsData[3].firstStage.greenCards;
+  firstStageBrownPanel.innerHTML = ancientsData[3].firstStage.brownCards;
+  firstStageBluePanel.innerHTML = ancientsData[3].firstStage.blueCards;
+  secondStageGreenPanel.innerHTML = ancientsData[3].secondStage.greenCards;
+  secondStageBrownPanel.innerHTML = ancientsData[3].secondStage.brownCards;
+  secondStageBluePanel.innerHTML = ancientsData[3].secondStage.blueCards;
+  thirdStageGreenPanel.innerHTML = ancientsData[3].thirdStage.greenCards;
+  thirdStageBrownPanel.innerHTML = ancientsData[3].thirdStage.brownCards;
+  thirdStageBluePanel.innerHTML = ancientsData[3].thirdStage.blueCards;
   azathoth.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   cthulthu.classList.toggle('hidden');
@@ -499,6 +544,7 @@ shubNiggurath.addEventListener('click', () => {
     };  
     playedCard.classList.toggle('hidden');
     shuffleButton.classList.toggle('hidden');
+    displayCards.classList.toggle('hidden');
     console.log(arrFirstStage, arrSecondStage, arrThirdStage);
   }
 });
@@ -509,17 +555,45 @@ playedCard.addEventListener('click', () => {
     playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
     playCard.style.backgroundSize = 'cover';
     console.log(randomElement[0][0].cardFace);
+    if (randomElement[0][0].color === 'green') {
+      firstStageGreenPanel.innerHTML = +(firstStageGreenPanel.textContent) - 1;
+    }
+    if (randomElement[0][0].color === 'brown') {
+      firstStageBrownPanel.innerHTML = +(firstStageBrownPanel.textContent) - 1;
+    }
+    if (randomElement[0][0].color === 'blue') {
+      firstStageBluePanel.innerHTML = +(firstStageBluePanel.textContent) - 1;
+    }
+
   }
   else if (arrSecondStage.length > 0) {
     randomElement = getRandomElementAndDelIFromArr(arrSecondStage);
     playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
     console.log(randomElement[0][0].cardFace);
+    if (randomElement[0][0].color === 'green') {
+      secondStageGreenPanel.innerHTML = +(secondStageGreenPanel.textContent) - 1;
+    }
+    if (randomElement[0][0].color === 'brown') {
+      secondStageBrownPanel.innerHTML = +(secondStageBrownPanel.textContent) - 1;
+    }
+    if (randomElement[0][0].color === 'blue') {
+      secondStageBluePanel.innerHTML = +(secondStageBluePanel.textContent) - 1;
+    }
   }
   else if (arrThirdStage.length > 0) {
     if(arrThirdStage.length > 1) {
       randomElement = getRandomElementAndDelIFromArr(arrThirdStage);
       playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
       console.log(randomElement[0][0].cardFace);
+      if (randomElement[0][0].color === 'green') {
+        thirdStageGreenPanel.innerHTML = +(thirdStageGreenPanel.textContent) - 1;
+      }
+      if (randomElement[0][0].color === 'brown') {
+        thirdStageBrownPanel.innerHTML = +(thirdStageBrownPanel.textContent) - 1;
+      }
+      if (randomElement[0][0].color === 'blue') {
+        thirdStageBluePanel.innerHTML = +(thirdStageBluePanel.textContent) - 1;
+      }
     } 
     else {
       randomElement = getRandomElementAndDelIFromArr(arrThirdStage);
@@ -527,6 +601,15 @@ playedCard.addEventListener('click', () => {
       console.log(randomElement[0][0].cardFace);
       playedCard.classList.toggle('hidden');
       alert('Now the last card in the game will open. Click "Reset Settings.');
+      if (randomElement[0][0].color === 'green') {
+        thirdStageGreenPanel.innerHTML = +(thirdStageGreenPanel.textContent) - 1;
+      }
+      if (randomElement[0][0].color === 'brown') {
+        thirdStageBrownPanel.innerHTML = +(thirdStageBrownPanel.textContent) - 1;
+      }
+      if (randomElement[0][0].color === 'blue') {
+        thirdStageBluePanel.innerHTML = +(thirdStageBluePanel.textContent) - 1;
+      }
     } 
   };
 });
