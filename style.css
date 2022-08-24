@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("./assets/home.png");
+    width: 100%;
+    height: 100%;
+}
+.main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.ancients {
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+.ancient {
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+}
+.difficult {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100%;
+    width: 20%;
+}
+.wrap-difficult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 10px;
+}
+.difficult-button {
+    background-color: rgb(236, 147, 14);
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;  
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+}
+.refresh-button {
+    background-color: rgb(172, 16, 16);
+}
+.shuffle-button {
+    background-color: blueviolet;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    opacity: .8;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:baseline;    
+    height: 100%;
+    width: 30%;
+}
+.display-cards {
+    height: 200px;
+    width: 200px;
+}
+.play-card {
+    height: 200px;
+    width: 136px;
+    border-radius: 5px; 
+    margin-bottom: 5px;
+}
+.played-card {  
+
+    opacity: .8;
+    cursor: pointer;
+    transition: .3s;
+}
+.mythic-card-background {
+    border-radius: 5px; 
+}
+.played-card:hover {
+    opacity: 1;
+}
+.difficult-button:hover {
+    opacity: 1;
+}
+.shuffle-button:hover {
+    opacity: 1;
+}
+.ancient:hover {
+    opacity: 1;
+}
+.difficult-button:hover {
+    width: 110px;
+}
+.shuffle-button:hover {
+    width: 110px;
+}
+.hidden {
+    visibility: hidden;
+}
