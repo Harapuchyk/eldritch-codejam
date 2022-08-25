@@ -17,8 +17,6 @@ const thirdStageBrownPanel = document.querySelector('.third-stage-brown-panel');
 const firstStageBluePanel = document.querySelector('.first-stage-blue-panel');
 const secondStageBluePanel = document.querySelector('.second-stage-blue-panel');
 const thirdStageBluePanel = document.querySelector('.third-stage-blue-panel');
-
-
 let arrFirstStage = [];
 let arrSecondStage = [];
 let arrThirdStage = [];
@@ -420,7 +418,9 @@ const cardsDataGreen = [
     },
   ]
 
-alert(`1. Click on the monster
+alert(`
+Attention! Scary sounds, turn down the volume!
+1. Click on the monster
 2. There is only one difficulty - normal.
 3. Click "Shuffle cards".
 4. Click on the reversed deck of cards and a new card will open
@@ -434,7 +434,19 @@ function getRandomElementAndDelIFromArr(arr) {
 
 function refreshPage(){
   window.location.reload();
-} 
+};
+
+function getDisplayCard(monster){
+  firstStageGreenPanel.innerHTML = ancientsData[monster].firstStage.greenCards;
+  firstStageBrownPanel.innerHTML = ancientsData[monster].firstStage.brownCards;
+  firstStageBluePanel.innerHTML = ancientsData[monster].firstStage.blueCards;
+  secondStageGreenPanel.innerHTML = ancientsData[monster].secondStage.greenCards;
+  secondStageBrownPanel.innerHTML = ancientsData[monster].secondStage.brownCards;
+  secondStageBluePanel.innerHTML = ancientsData[monster].secondStage.blueCards;
+  thirdStageGreenPanel.innerHTML = ancientsData[monster].thirdStage.greenCards;
+  thirdStageBrownPanel.innerHTML = ancientsData[monster].thirdStage.brownCards;
+  thirdStageBluePanel.innerHTML = ancientsData[monster].thirdStage.blueCards;
+};
 
 refreshButton.addEventListener('click', () => {
   refreshPage();
@@ -444,75 +456,66 @@ normalDifficultButton.addEventListener('click', () => {
   alert('Difficulty selected. There is only one difficulty - normal.')
 });
 
+const audio0 = new Audio();
+  
 azathoth.addEventListener('click', () => {
-  firstStageGreenPanel.innerHTML = ancientsData[0].firstStage.greenCards;
-  firstStageBrownPanel.innerHTML = ancientsData[0].firstStage.brownCards;
-  firstStageBluePanel.innerHTML = ancientsData[0].firstStage.blueCards;
-  secondStageGreenPanel.innerHTML = ancientsData[0].secondStage.greenCards;
-  secondStageBrownPanel.innerHTML = ancientsData[0].secondStage.brownCards;
-  secondStageBluePanel.innerHTML = ancientsData[0].secondStage.blueCards;
-  thirdStageGreenPanel.innerHTML = ancientsData[0].thirdStage.greenCards;
-  thirdStageBrownPanel.innerHTML = ancientsData[0].thirdStage.brownCards;
-  thirdStageBluePanel.innerHTML = ancientsData[0].thirdStage.blueCards;
+  audio0.src = "./assets/mp3/laugh.mp3"
+  audio0.currentTime = 0;
+  audio0.volume=0.5;
+  audio0.play();  
   cthulthu.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
   numAncient = 0;
+  getDisplayCard(numAncient);
 });
 
 cthulthu.addEventListener('click', () => {
-  firstStageGreenPanel.innerHTML = ancientsData[1].firstStage.greenCards;
-  firstStageBrownPanel.innerHTML = ancientsData[1].firstStage.brownCards;
-  firstStageBluePanel.innerHTML = ancientsData[1].firstStage.blueCards;
-  secondStageGreenPanel.innerHTML = ancientsData[1].secondStage.greenCards;
-  secondStageBrownPanel.innerHTML = ancientsData[1].secondStage.brownCards;
-  secondStageBluePanel.innerHTML = ancientsData[1].secondStage.blueCards;
-  thirdStageGreenPanel.innerHTML = ancientsData[1].thirdStage.greenCards;
-  thirdStageBrownPanel.innerHTML = ancientsData[1].thirdStage.brownCards;
-  thirdStageBluePanel.innerHTML = ancientsData[1].thirdStage.blueCards;
+  audio0.src = "./assets/mp3/laugh.mp3"
+  audio0.currentTime = 0;
+  audio0.volume=0.5;
+  audio0.play();
   azathoth.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
   numAncient = 1;
+  getDisplayCard(numAncient);
 });
 
  iogSothoth.addEventListener('click', () => {
-  firstStageGreenPanel.innerHTML = ancientsData[2].firstStage.greenCards;
-  firstStageBrownPanel.innerHTML = ancientsData[2].firstStage.brownCards;
-  firstStageBluePanel.innerHTML = ancientsData[2].firstStage.blueCards;
-  secondStageGreenPanel.innerHTML = ancientsData[2].secondStage.greenCards;
-  secondStageBrownPanel.innerHTML = ancientsData[2].secondStage.brownCards;
-  secondStageBluePanel.innerHTML = ancientsData[2].secondStage.blueCards;
-  thirdStageGreenPanel.innerHTML = ancientsData[2].thirdStage.greenCards;
-  thirdStageBrownPanel.innerHTML = ancientsData[2].thirdStage.brownCards;
-  thirdStageBluePanel.innerHTML = ancientsData[2].thirdStage.blueCards;
+  audio0.src = "./assets/mp3/laugh.mp3"
+  audio0.currentTime = 0;
+  audio0.volume=0.5;
+  audio0.play();
   azathoth.classList.toggle('hidden');
   cthulthu.classList.toggle('hidden');
   shubNiggurath.classList.toggle('hidden');
   numAncient = 2;
+  getDisplayCard(numAncient);
  });
 
 shubNiggurath.addEventListener('click', () => {
-  firstStageGreenPanel.innerHTML = ancientsData[3].firstStage.greenCards;
-  firstStageBrownPanel.innerHTML = ancientsData[3].firstStage.brownCards;
-  firstStageBluePanel.innerHTML = ancientsData[3].firstStage.blueCards;
-  secondStageGreenPanel.innerHTML = ancientsData[3].secondStage.greenCards;
-  secondStageBrownPanel.innerHTML = ancientsData[3].secondStage.brownCards;
-  secondStageBluePanel.innerHTML = ancientsData[3].secondStage.blueCards;
-  thirdStageGreenPanel.innerHTML = ancientsData[3].thirdStage.greenCards;
-  thirdStageBrownPanel.innerHTML = ancientsData[3].thirdStage.brownCards;
-  thirdStageBluePanel.innerHTML = ancientsData[3].thirdStage.blueCards;
+  audio0.src = "./assets/mp3/laugh.mp3"
+  audio0.currentTime = 0;
+  audio0.volume=0.5;
+  audio0.play();
   azathoth.classList.toggle('hidden');
   iogSothoth.classList.toggle('hidden');
   cthulthu.classList.toggle('hidden');
   numAncient = 3;
+  getDisplayCard(numAncient);
 });
+
+const audio = new Audio();
 
  shuffleButton.addEventListener('click', () => {
   if (numAncient === 5) {
     alert('Click on the monster')
   }
   else {
+    audio.src = "./assets/mp3/cards.mp3"
+    audio.currentTime = 0;
+    audio.play();
     for (let i = 0; i < ancientsData[numAncient].firstStage.greenCards; i++) {
         arrFirstStage.push(getRandomElementAndDelIFromArr(cardsDataGreen)); 
     }; 
@@ -545,16 +548,19 @@ shubNiggurath.addEventListener('click', () => {
     playedCard.classList.toggle('hidden');
     shuffleButton.classList.toggle('hidden');
     displayCards.classList.toggle('hidden');
-    console.log(arrFirstStage, arrSecondStage, arrThirdStage);
   }
 });
 
+const audio1 = new Audio();
+
 playedCard.addEventListener('click', () => {
-  if (arrFirstStage.length > 0) {
+  audio1.src = "./assets/mp3/card.mp3"
+  audio1.currentTime = 0;
+  audio1.play();
+  if (arrFirstStage.length > 0) {    
     randomElement = getRandomElementAndDelIFromArr(arrFirstStage);
     playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
     playCard.style.backgroundSize = 'cover';
-    console.log(randomElement[0][0].cardFace);
     if (randomElement[0][0].color === 'green') {
       firstStageGreenPanel.innerHTML = +(firstStageGreenPanel.textContent) - 1;
     }
@@ -564,12 +570,10 @@ playedCard.addEventListener('click', () => {
     if (randomElement[0][0].color === 'blue') {
       firstStageBluePanel.innerHTML = +(firstStageBluePanel.textContent) - 1;
     }
-
   }
   else if (arrSecondStage.length > 0) {
     randomElement = getRandomElementAndDelIFromArr(arrSecondStage);
     playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
-    console.log(randomElement[0][0].cardFace);
     if (randomElement[0][0].color === 'green') {
       secondStageGreenPanel.innerHTML = +(secondStageGreenPanel.textContent) - 1;
     }
@@ -584,7 +588,6 @@ playedCard.addEventListener('click', () => {
     if(arrThirdStage.length > 1) {
       randomElement = getRandomElementAndDelIFromArr(arrThirdStage);
       playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
-      console.log(randomElement[0][0].cardFace);
       if (randomElement[0][0].color === 'green') {
         thirdStageGreenPanel.innerHTML = +(thirdStageGreenPanel.textContent) - 1;
       }
@@ -598,7 +601,6 @@ playedCard.addEventListener('click', () => {
     else {
       randomElement = getRandomElementAndDelIFromArr(arrThirdStage);
       playCard.style.backgroundImage = `url('${randomElement[0][0].cardFace}')`;
-      console.log(randomElement[0][0].cardFace);
       playedCard.classList.toggle('hidden');
       alert('Now the last card in the game will open. Click "Reset Settings.');
       if (randomElement[0][0].color === 'green') {
@@ -614,3 +616,8 @@ playedCard.addEventListener('click', () => {
   };
 });
 
+console.log(`[+] 1. На выбор предоставляется 4 карты древних +20 баллов.
+[+/-] 2. На выбор предоставляется 1 уровень сложности +5 баллов.
+[+] 3. Карты замешиваются согласно правилам игры +40 баллов.
+[+] 4. Есть трекер текущего состояния колоды +20 баллов.
+Итого: 85 баллов`);
